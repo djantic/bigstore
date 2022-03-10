@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
     image: '/images/airpods.jpg',
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Samsung s22 Ultra 5G',
     image: '/images/samsung.jpg',
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 7,
   },
   {
-    _id: '3',
     name: 'Cannon EOS 80D DSLR Camera',
     image: '/images/camera.jpg',
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 6,
   },
   {
-    _id: '4',
     name: 'Sony Playstation 5',
     image: '/images/ps5.jpg',
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 13,
   },
   {
-    _id: '5',
     name: 'Logitech G-Series Gaming Mouse',
     image: '/images/mouse.jpg',
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 3,
   },
   {
-    _id: '6',
     name: 'Amazon Echo 3rd Generation',
     image: '/images/echo.jpg',
     description:
@@ -78,10 +72,9 @@ const products = [
     numReviews: 16,
   },
   {
-    _id: '7',
     name: 'Nintendo Switch - Neon Blue + Neon Red Joy-Con',
     image: '/images/nintendo.jpg',
-    description: 
+    description:
       'This bundle includes the Nintendo Switch console and Nintendo Switch dock in black, with contrasting left and right Joy‑Con™ controllers—one red, one blue. It also includes all the extras you need to get started.',
     brand: 'Nintendo',
     category: 'Electronics',
@@ -91,18 +84,17 @@ const products = [
     numReviews: 3,
   },
   {
-    _id: '8',
     name: 'Oculus Quest 2 256GB',
     image: '/images/oculusquest.jpg',
     description:
-    'Quest 2 is non-stop fun. The biggest titles and multi-player games—we have them. New ways to workout, socialize or lose track of time—we have those too. And our library keeps growing every day. Discover what’s possible on Quest 2.',
+      'Quest 2 is non-stop fun. The biggest titles and multi-player games—we have them. New ways to workout, socialize or lose track of time—we have those too. And our library keeps growing every day. Discover what’s possible on Quest 2.',
     brand: 'Meta',
     category: 'Electronics',
     price: 399.99,
     countInStock: 4,
     rating: 4.5,
     numReviews: 7,
-  }
-]
+  },
+];
 
-export default products
+export default products;
