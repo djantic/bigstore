@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams,useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Row,
@@ -9,6 +9,7 @@ import {
   ListGroup,
   Button,
   ListGroupItem,
+  FormControl,
 } from 'react-bootstrap';
 import { listProductDetails } from '../actions/productActions';
 import Rating from '../components/Rating';
@@ -16,14 +17,20 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 
 const ProductScreen = () => {
+  const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const match = useParams();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    dispatch(listProductDetails(id));
-  }, [dispatch, id]);
+    dispatch(listProductDetails(match.id));
+  }, [dispatch, match]);
+  
+  const addToCartHandler = () => {
+    navigate(`/cart/${match.id}?qty=${quantity}`);
+  };
 
   return (
     <>
@@ -73,8 +80,26 @@ const ProductScreen = () => {
                     </Col>
                   </Row>
                 </ListGroupItem>
+                {product.countInStock > 0 && (
+                  <ListGroupItem>
+                    <Row>
+                      <Col> Quantity:</Col>
+                      <Col>
+                        <FormControl
+                          as="select"
+                          onChange={(e) => setQuantity(e.target.value)}
+                        >
+                          {[...Array(product.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>{x + 1}</option>
+                          ))}
+                        </FormControl>
+                      </Col>
+                    </Row>
+                  </ListGroupItem>
+                )}
                 <ListGroupItem>
                   <Button
+                    onClick={addToCartHandler}
                     className="btn btn-outline-primary w-100"
                     variant="light"
                     type="button"
