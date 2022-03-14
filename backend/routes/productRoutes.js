@@ -4,7 +4,6 @@ import Product from '../models/productModel.js';
 
 // fetch all products, /api/products
 
-
 const router = express.Router();
 
 router.get(
@@ -25,8 +24,8 @@ router.get(
     if (product) {
       res.json(product);
     } else {
-      res.status(404)
-      throw new Error('Product is not found')
+      res.status(404);
+      throw new Error('Product is not found');
     }
   })
 );
