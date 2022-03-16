@@ -2,6 +2,9 @@ import expressAsyncHandler from 'express-async-handler';
 import generateToken from '../utilitys/tokenGenerator.js';
 import User from '../models/userModel.js';
 
+// @desc authenticate user and get token
+// @route POST /api/users/login
+// @access PUBLIC
 const authUser = expressAsyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -21,6 +24,9 @@ const authUser = expressAsyncHandler(async (req, res) => {
   }
 });
 
+// @desc register a new user
+// @route POST /api/users/
+// @access PUBLIC
 const registerUser = expressAsyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -51,6 +57,9 @@ const registerUser = expressAsyncHandler(async (req, res) => {
   }
 });
 
+// @desc get data for an authenticated user
+// @route GET /api/users/profile
+// @access PRIVATE
 const getUserProfile = expressAsyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
@@ -68,5 +77,33 @@ const getUserProfile = expressAsyncHandler(async (req, res) => {
 
   res.send('succsess');
 });
+// @desc update user data for an authenticated user
+// @route PUT /api/users/profile
+// @access PRIVATE
+const updateUserProfile = expressAsyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
 
-export { authUser, registerUser, getUserProfile };
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.name || user.email;
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+
+    const updatedUser = await user.save();
+    res.json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      token: generateToken(updatedUser._id),
+    });
+  } else {
+    res.status(404);
+    throw new Error('User not found ');
+  }
+
+  res.send('succsess');
+});
+
+export { authUser, registerUser, getUserProfile, updateUserProfile };

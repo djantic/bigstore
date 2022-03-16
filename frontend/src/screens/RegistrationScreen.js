@@ -15,7 +15,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { register } from '../actions/userAction';
 
-const RegistrationScreen = () => {
+const RegisterScreen = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -101,4 +101,4 @@ const RegistrationScreen = () => {
   );
 };
 
-export default RegistrationScreen;
+export default RegisterScreen;
