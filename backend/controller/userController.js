@@ -102,7 +102,7 @@ const updateUserProfile = expressAsyncHandler(async (req, res) => {
     throw new Error('User not found ');
   }
 
-  res.send('succsess');
+  
 });
 
 export { authUser, registerUser, getUserProfile, updateUserProfile };
