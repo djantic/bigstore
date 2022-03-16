@@ -75,7 +75,6 @@ const getUserProfile = expressAsyncHandler(async (req, res) => {
     throw new Error('User not found ');
   }
 
-  res.send('succsess');
 });
 // @desc update user data for an authenticated user
 // @route PUT /api/users/profile
