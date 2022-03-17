@@ -22,6 +22,7 @@ const authUser = expressAsyncHandler(async (req, res) => {
     res.status(401);
     throw new Error('invalid login attempt');
   }
+  
 });
 
 // @desc register a new user
@@ -72,7 +73,7 @@ const getUserProfile = expressAsyncHandler(async (req, res) => {
     });
   } else {
     res.status(404);
-    throw new Error('User not found ');
+    throw new Error('User not found');
   }
 
 });
@@ -84,7 +85,7 @@ const updateUserProfile = expressAsyncHandler(async (req, res) => {
 
   if (user) {
     user.name = req.body.name || user.name;
-    user.email = req.body.name || user.email;
+    user.email = req.body.email || user.email;
     if (req.body.password) {
       user.password = req.body.password;
     }
@@ -99,7 +100,7 @@ const updateUserProfile = expressAsyncHandler(async (req, res) => {
     });
   } else {
     res.status(404);
-    throw new Error('User not found ');
+    throw new Error('User not found');
   }
 
   
