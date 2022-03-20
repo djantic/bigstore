@@ -16,7 +16,14 @@ const Header = () => {
       <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>Big Store</Navbar.Brand>
+            <Navbar.Brand>
+              <img
+                src="/images/logo32.png"
+                className="nav-logo px-3"
+                alt="logo"
+              ></img>
+              Big Store
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
