@@ -5,7 +5,6 @@ import {
   Button,
   FormGroup,
   FormLabel,
-  FormControl,
   Col,
   FormCheck,
 } from 'react-bootstrap';

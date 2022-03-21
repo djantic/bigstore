@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Form,
   Button,
@@ -53,7 +53,7 @@ const ProfileScreen = () => {
 
   return (
     <Row>
-      <Col md={3}>
+      <Col sm={12} md={6} lg={4} xl={3} className='mx-auto'>
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
@@ -101,9 +101,6 @@ const ProfileScreen = () => {
             Update{' '}
           </Button>
         </Form>
-      </Col>
-      <Col md={9}>
-        <h2>My Order</h2>
       </Col>
     </Row>
   );

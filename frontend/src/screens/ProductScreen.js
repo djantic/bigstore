@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams,useNavigate} from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Row,
@@ -27,16 +27,13 @@ const ProductScreen = () => {
   useEffect(() => {
     dispatch(listProductDetails(match.id));
   }, [dispatch, match]);
-  
+
   const addToCartHandler = () => {
     navigate(`/cart/${match.id}?qty=${quantity}`);
   };
 
   return (
     <>
-      <Link className="btn btn-primary my-3" to="/">
-        Go Back
-      </Link>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -44,7 +41,11 @@ const ProductScreen = () => {
       ) : (
         <Row>
           <Col md={6}>
-            <Image src={product.image} alt={product.name} />
+            <Image
+              src={product.image}
+              alt={product.name}
+              className="img-fluid"
+            />
           </Col>
           <Col md={3}>
             <ListGroup variant="flush">
@@ -57,8 +58,7 @@ const ProductScreen = () => {
                   text={`${product.numReviews} reviews`}
                 />
               </ListGroupItem>
-              <ListGroupItem>Price: ${product.price}</ListGroupItem>
-              <ListGroupItem>Description:{product.description}</ListGroupItem>
+              <ListGroupItem>{product.description}</ListGroupItem>
             </ListGroup>
           </Col>
           <Col md={3}>
@@ -90,7 +90,9 @@ const ProductScreen = () => {
                           onChange={(e) => setQuantity(e.target.value)}
                         >
                           {[...Array(product.countInStock).keys()].map((x) => (
-                            <option key={x + 1} value={x + 1}>{x + 1}</option>
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
                           ))}
                         </FormControl>
                       </Col>

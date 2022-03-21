@@ -3,7 +3,6 @@ import {
   Link,
   useLocation,
   useParams,
-  useSearchParams,
   useNavigate,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +11,6 @@ import {
   Col,
   ListGroup,
   Image,
-  Form,
   Button,
   Card,
   ListGroupItem,
@@ -24,7 +22,6 @@ import { addToCart,removeFromCart } from '../actions/cartAction';
 const CartScreen = () => {
   const { id } = useParams();
   const { search } = useLocation();
-  const [searchParms] = useSearchParams();
   const navigate = useNavigate();
 
   const productId = id;
