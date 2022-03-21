@@ -26,7 +26,7 @@ Any more suggestions are always welcome in the PRs!
 
 ## Technologies Used
 * [MongoDB Atlas](https://www.mongodb.com/atlas/database) : It provides a free cloud service to store MongoDB collections.
-* [MonGoose](https://mongoosejs.com/) : An ODM(Object Data Modelling)library for MongoDB and Node.js.
+* [Mongoose](https://mongoosejs.com/) : An ODM(Object Data Modelling)library for MongoDB and Node.js.
 * [React.js](https://reactjs.org/) : A JavaScript library for building user interfaces.
 * [Node.js](https://nodejs.org/en/) : A runtime environment to help build fast server applications using JS.
 * [Express.js](https://expressjs.com/) : A popular Node.js framework to build scalable server-side for web applications.
