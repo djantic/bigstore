@@ -47,7 +47,7 @@ const CartScreen = () => {
   return (
     <Row>
       <Col md={8}>
-        <h1>Shopping Cart</h1>
+        <h1 className='text-center py-3'>Shopping Cart</h1>
         {cartItems && cartItems.length === 0 ? (
           <Message>Your cart is empty</Message>
         ) : (

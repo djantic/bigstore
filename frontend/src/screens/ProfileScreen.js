@@ -52,15 +52,15 @@ const ProfileScreen = () => {
   };
 
   return (
-    <Row>
-      <Col sm={12} md={6} lg={4} xl={3} className='mx-auto'>
+    <Row className="my-5">
+      <Col sm={12} md={6} lg={4} xl={3} className="mx-auto">
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
         {success && <Message variant="success">Profile Updated</Message>}
         {loading && <Loader></Loader>}
         <Form onSubmit={submitHandler}>
-          <FormGroup controlId="name">
+          <FormGroup controlId="name" className="mt-3">
             <FormLabel>Your Name</FormLabel>
             <FormControl
               type="name"
@@ -69,7 +69,7 @@ const ProfileScreen = () => {
               onChange={(e) => setName(e.target.value)}
             ></FormControl>
           </FormGroup>
-          <FormGroup controlId="email">
+          <FormGroup controlId="email" className="mt-3">
             <FormLabel>Email Address</FormLabel>
             <FormControl
               type="email"
@@ -78,20 +78,20 @@ const ProfileScreen = () => {
               onChange={(e) => setEmail(e.target.value)}
             ></FormControl>
           </FormGroup>
-          <FormGroup controlId="password">
-            <FormLabel>Password</FormLabel>
+          <FormGroup controlId="password" className="mt-3">
+            <FormLabel> New Password</FormLabel>
             <FormControl
               type="password"
-              placeholder="Enter your password"
+              placeholder="Enter your new password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></FormControl>
           </FormGroup>
-          <FormGroup controlId="confirmPassword">
-            <FormLabel>Password</FormLabel>
+          <FormGroup controlId="confirmPassword" className="mt-3">
+            <FormLabel>Confirm New Password</FormLabel>
             <FormControl
               type="password"
-              placeholder="Confirm your password"
+              placeholder="Confirm your new password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></FormControl>

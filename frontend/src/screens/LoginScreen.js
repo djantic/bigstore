@@ -36,11 +36,11 @@ const LoginScreen = () => {
 
   return (
     <FormComp>
-      <h1>Sign In </h1>
+      <h1 className='text-center'>Sign In </h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader></Loader>}
       <Form onSubmit={submitHandler}>
-        <FormGroup controlId="email">
+        <FormGroup controlId="email" className='mt-3'>
           <FormLabel>Email Address</FormLabel>
           <FormControl
             type="email"
@@ -49,7 +49,7 @@ const LoginScreen = () => {
             onChange={(e) => setEmail(e.target.value)}
           ></FormControl>
         </FormGroup>
-        <FormGroup controlId="password">
+        <FormGroup controlId="password" className='mt-3'>
           <FormLabel>Password</FormLabel>
           <FormControl
             type="password"
@@ -64,8 +64,8 @@ const LoginScreen = () => {
         </Button>
       </Form>
       <Row className="py-3">
-        <Col>
-          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
+        <Col>Dont have an account?
+          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'} className='mx-3 text-info '>
             Register
           </Link>
         </Col>

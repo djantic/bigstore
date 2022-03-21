@@ -39,12 +39,13 @@ const ProductScreen = () => {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        <Row>
+        <Row className='my-5'>
           <Col md={6}>
             <Image
               src={product.image}
               alt={product.name}
               className="img-fluid"
+              
             />
           </Col>
           <Col md={3}>
@@ -66,7 +67,7 @@ const ProductScreen = () => {
               <ListGroup>
                 <ListGroupItem>
                   <Row>
-                    <Col>Price:</Col>
+                    <Col>Price</Col>
                     <Col>
                       <strong>${product.price}</strong>
                     </Col>
@@ -74,7 +75,7 @@ const ProductScreen = () => {
                 </ListGroupItem>
                 <ListGroupItem>
                   <Row>
-                    <Col>Status:</Col>
+                    <Col>Status</Col>
                     <Col>
                       {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
                     </Col>
@@ -83,7 +84,7 @@ const ProductScreen = () => {
                 {product.countInStock > 0 && (
                   <ListGroupItem>
                     <Row>
-                      <Col> Quantity:</Col>
+                      <Col> Quantity</Col>
                       <Col>
                         <FormControl
                           as="select"

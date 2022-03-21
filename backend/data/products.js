@@ -1,10 +1,10 @@
 const products = [
   {
-    name: 'Airpods Wireless Bluetooth Headphones',
-    image: '/images/airpods.jpg',
+    name: 'Galaxy Buds Live',
+    image: '/images/GalaxyBudsLive.jpg',
     description:
-      'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
-    brand: 'Apple',
+      'The earbud designed to tune in to every moment. With an iconic shape and ergonomic design, a fit that lets in your natural surroundings, and a speaker optimised for the ultimate sound experience. This is sound made for your ears.',
+    brand: 'Samsung',
     category: 'Electronics',
     price: 99.99,
     countInStock: 10,
@@ -24,7 +24,7 @@ const products = [
     numReviews: 7,
   },
   {
-    name: 'Cannon EOS 80D DSLR Camera',
+    name: 'Cannon EOS 80D DSLR',
     image: '/images/camera.jpg',
     description:
       'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
@@ -48,11 +48,11 @@ const products = [
     numReviews: 13,
   },
   {
-    name: 'Logitech G-Series Gaming Mouse',
-    image: '/images/mouse.jpg',
+    name: 'Prime Neo Noir Edition Mice',
+    image: '/images/PrimeNeoNoirEdition.jpg',
     description:
-      'Get a better handle on your games with this Logitech LIGHTSYNC gaming mouse. The six programmable buttons allow customization for a smooth playing experience',
-    brand: 'Logitech',
+      'Limited edition, lightweight mouse that offers lag-free, crispy click-laden gaming and features the chaotic energy of the Neo Noir CS:GO skin',
+    brand: 'SteelSeries',
     category: 'Electronics',
     price: 39.99,
     countInStock: 0,
@@ -72,10 +72,10 @@ const products = [
     numReviews: 16,
   },
   {
-    name: 'Nintendo Switch - Neon Blue + Neon Red Joy-Con',
+    name: 'Nintendo Switch',
     image: '/images/nintendo.jpg',
     description:
-      'This bundle includes the Nintendo Switch console and Nintendo Switch dock in black, with contrasting left and right Joy‑Con™ controllers—one red, one blue. It also includes all the extras you need to get started.',
+      'This bundle includes the Nintendo Switch console and Nintendo Switch dock in black, with contrasting left and right JoyCon™ controllers—one red, one blue. It also includes all the extras you need to get started.',
     brand: 'Nintendo',
     category: 'Electronics',
     price: 299.99,

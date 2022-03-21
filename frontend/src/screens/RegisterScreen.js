@@ -42,13 +42,13 @@ const RegisterScreen = () => {
   };
 
   return (
-    <FormComp>
-      <h1>Sign Up</h1>
+    <FormComp >
+      <h1 className="text-center">Sign Up</h1>
       {message && <Message variant="danger">{message}</Message>}
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader></Loader>}
       <Form onSubmit={submitHandler}>
-        <FormGroup controlId="name">
+        <FormGroup controlId="name" className="mt-3">
           <FormLabel>Your Name</FormLabel>
           <FormControl
             type="name"
@@ -57,7 +57,7 @@ const RegisterScreen = () => {
             onChange={(e) => setName(e.target.value)}
           ></FormControl>
         </FormGroup>
-        <FormGroup controlId="email">
+        <FormGroup controlId="email" className="mt-3">
           <FormLabel>Email Address</FormLabel>
           <FormControl
             type="email"
@@ -66,7 +66,7 @@ const RegisterScreen = () => {
             onChange={(e) => setEmail(e.target.value)}
           ></FormControl>
         </FormGroup>
-        <FormGroup controlId="password">
+        <FormGroup controlId="password" className="mt-3">
           <FormLabel>Password</FormLabel>
           <FormControl
             type="password"
@@ -75,8 +75,8 @@ const RegisterScreen = () => {
             onChange={(e) => setPassword(e.target.value)}
           ></FormControl>
         </FormGroup>
-        <FormGroup controlId="confirmPassword">
-          <FormLabel>Password</FormLabel>
+        <FormGroup controlId="confirmPassword" className="mt-3">
+          <FormLabel>Confirm Password</FormLabel>
           <FormControl
             type="password"
             placeholder="Confirm your password"
@@ -92,7 +92,10 @@ const RegisterScreen = () => {
       <Row className="py-3">
         <Col>
           Already have an account?
-          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
+          <Link
+            to={redirect ? `/login?redirect=${redirect}` : '/login'}
+            className="mx-3 text-info "
+          >
             Login
           </Link>
         </Col>

@@ -19,7 +19,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <h1>Exclusive Deals</h1>
+      <h1 className='text-center'>Exclusive Deals</h1>
       {loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message>: (<Row>
         {products.map((product) => (
           <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
