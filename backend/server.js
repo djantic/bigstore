@@ -5,6 +5,7 @@ import connectDB from './configdb/db.js';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 dotenv.config();
 connectDB();
@@ -32,6 +33,9 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running...');
   });
 }
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
